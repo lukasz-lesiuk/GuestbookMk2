@@ -1,4 +1,4 @@
-package com.example.guestbook.Model;
+package com.example.guestbook.model;
 
 import java.util.Date;
 
