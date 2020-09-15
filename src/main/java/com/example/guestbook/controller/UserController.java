@@ -29,7 +29,7 @@ public class UserController {
 	@GetMapping("/users")
 	public String greetingForm(Model model) {
 		model.addAttribute("greetingList", userService.getUsers());
-		model.addAttribute("greeting", new User());
+		model.addAttribute("user", new User());
 		return "allUsers";
 	}
 
