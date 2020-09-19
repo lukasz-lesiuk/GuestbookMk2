@@ -1,5 +1,6 @@
 package com.example.guestbook.controller;
 
+import com.example.guestbook.dto.UserCreationDto;
 import com.example.guestbook.model.User;
 import com.example.guestbook.service.userService;
 import org.springframework.stereotype.Controller;
@@ -29,15 +30,26 @@ public class UserController {
 	@GetMapping("/users")
 	public String greetingForm(Model model) {
 		model.addAttribute("greetingList", userService.getUsers());
+
+//		UserCreationDto userForm =  new UserCreationDto();
 		model.addAttribute("user", new User());
+//		model.addAttribute("userForm", new userCreationDto.getUser());
 		return "allUsers";
 	}
 
+//	@PostMapping("/users")
+//	public String greetingSubmit(@ModelAttribute User userForm, Model model) {
+//		userService.addUser(userForm);
+//		model.addAttribute("greetingList", userService.getUsers());
+//		return "allUsers";
+//	}
 	@PostMapping("/users")
 	public String greetingSubmit(@ModelAttribute User user, Model model) {
 		userService.addUser(user);
 		model.addAttribute("greetingList", userService.getUsers());
 		return "allUsers";
+
 	}
+
 
 }
